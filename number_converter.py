@@ -41,9 +41,10 @@ def run_program( types ):
         print()
         print()
 
-
+        # Runs as long as the user doesn't choose to end the program immediately
         if ( userInput != 999 ):
 
+            # Gets the input type from the list of available types
             chosenTypeToConvertFrom = types[ userInput ]
 
             # Creates a list with the available output types
@@ -54,18 +55,20 @@ def run_program( types ):
             print( "Please Select a Number Format to Convert To" )
             display_input_or_output_types( outputTypes )
             
-            # Gets the output type from the user
+            # Gets the menu number corresponding to the output type from the user
             userOutput = get_input_or_output_type_from_user( UPPER_BOUNDS - 1 , LOWER_BOUNDS )
 
             print()
             print()
 
             try:
-
+                # Runs as long as the user doesn't choose to end the program
                 if ( userOutput != 999 ):
-
+                    
+                    # Gets the output type from the list of available types
                     chosenTypeToConvertTo = outputTypes[ userOutput ]
-
+                    
+                    # Gets the value of the number the user wants to convert
                     value = get_value_to_convert( chosenTypeToConvertFrom )
 
                     print()
@@ -215,4 +218,5 @@ def validate_user_input( input, UPPER_BOUNDS, LOWER_BOUNDS ):
 
 # Calls the main function
 if __name__ == "__main__":
+
     main()
